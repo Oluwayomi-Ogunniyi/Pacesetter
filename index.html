@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pacesetter Mum - Empowering Every Step in Your Child's Unique Journey</title>
+    <meta name="description" content="A compassionate hub for parents and caregivers of children with special needs. Discover special education, therapy, and community support tailored for your family.">
+    <link rel="icon" href="https://via.placeholder.com/32?text=PM" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Yellow-Green Theme: Optimistic Growth Palette for Empowerment */
+        /* Primary: Vibrant Green (#10b981) - Growth & Fresh Starts */
+        /* Secondary: Sunny Yellow (#f59e0b) - Warmth & Positivity */
+        /* Accent: Mustard Yellow (#d97706) - Subtle Energy & Highlights */
+        /* Neutrals: Light Mint (#f0fdf4) BG, Deep Forest (#065f46) Text for Readability */
+        :root {
+            --primary-color: #10b981; /* Emerald Green: Calming growth vibe */
+            --secondary-color: #f59e0b; /* Amber Yellow: Joyful, welcoming energy */
+            --accent-color: #d97706; /* Mustard Yellow: Earthy accent for depth */
+            --bg-light: #f0fdf4; /* Light Mint Green: Soft, nature-inspired base */
+            --bg-card: #ffffff; /* Pure White for cards */
+            --text-primary: #065f46; /* Deep Forest Green: Strong contrast, grounded */
+            --text-secondary: #6b7280; /* Cool Gray: Balanced for secondary text */
+            --border-color: #d1fae5; /* Light Green: Soft, thematic dividers */
+            --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        /* Header & Nav */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(240, 253, 244, 0.98); /* Matches bg-light for seamless blend */
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cta-button:hover {
+            background: #059669; /* Darker green for depth */
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="500" cy="500" r="200" fill="rgba(255,255,255,0.1)"/></svg>') no-repeat center/cover;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .quick-help {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--secondary-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 50%;
+            box-shadow: var(--shadow-md);
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 50;
+            animation: pulse 2s infinite;
+        }
+
+        .quick-help:hover {
+            transform: scale(1.05);
+            background: #d97706; /* Mustard accent for hover */
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: var(--shadow-md); }
+            50% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0.2); }
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services {
+            background: var(--bg-light);
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .testimonials {
+            background: var(--bg-light);
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .testimonial-carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+
+        .testimonial-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .testimonial {
+            flex: 0 0 300px;
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            scroll-snap-align: start;
+            border: 1px solid var(--border-color);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .testimonial cite {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .newsletter {
+            background: var(--bg-card);
+            padding: 3rem;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            margin: 2rem auto;
+            max-width: 600px;
+            border: 1px solid var(--border-color);
+        }
+
+        .newsletter input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 0;
+            background: var(--bg-light);
+        }
+
+        .newsletter button {
+            width: 100%;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 0 0 8px 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter button:hover {
+            background: #b45309; /* Darker mustard */
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Mobile menu toggle can be added with JS */
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .hero {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Accessibility: Focus styles */
+        a:focus, button:focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        /* Enhanced Dark Mode: Earthy Inversion for Evening Calm */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-light: #064e3b;
+                --bg-card: #065f46;
+                --text-primary: #f0fdf4;
+                --text-secondary: #d1fae5;
+                --border-color: #047857;
+            }
+
+            header {
+                background: rgba(6, 78, 59, 0.98);
+            }
+
+            .hero {
+                background: linear-gradient(135deg, #047857 0%, #b45309 100%); /* Darker green-yellow variants */
+            }
+
+            footer {
+                background: #064e3b;
+            }
+
+            footer a {
+                color: #f59e0b;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">The Pacesetter Mum</a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Stories</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#booking" class="cta-button">Book a Call</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Empowering Every Step in Your Child's Unique Journey</h1>
+                <p>We're here with compassionate support for special education, therapy, and community, tailored for families like yours in Nigeria and beyond.</p>
+                <a href="#services" class="cta-button">Explore Resources</a>
+            </div>
+        </section>
+
+        <div class="quick-help" onclick="openChat()" aria-label="Quick Help Chat">💬</div>
+
+        <section id="services" class="services">
+            <h2>Our Core Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Special Education</h3>
+                    <p>Personalized learning programs designed for children with diverse needs, fostering independence and joy in discovery.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Health & Therapy</h3>
+                    <p>Expert-led sessions in occupational, speech, and behavioral therapy to support holistic development.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Community Support</h3>
+                    <p>Connect with fellow parents through forums, events, and shared stories—because you're never alone.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials">
+            <h2>Real Families, Real Impact</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial">
+                    <p>"The Pacesetter Mum turned our isolation into a vibrant community. My son's progress in therapy has been life-changing."</p>
+                    <cite>— Aisha, Lagos</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"From sensory play tips to expert advice, this hub feels like a warm embrace for overwhelmed mums."</p>
+                    <cite>— Fatima, Abuja</cite>
+                </div>
+                <div class="testimonial">
+                    <p>"Booking sessions was seamless, and the empathy here is unmatched. Grateful every day."</p>
+                    <cite>— Ngozi, Port Harcourt</cite>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter" id="contact">
+            <h2>Get Weekly Wins in Your Inbox</h2>
+            <p>Sign up for tips, stories, and exclusive resources on special needs parenting.</p>
+            <form>
+                <input type="email" placeholder="Your email address" required aria-label="Email address">
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 The Pacesetter Mum. All rights reserved. 
+    </footer>
+
+    <script>
+        // Simple interactions for modern feel
+        function openChat() {
+            alert('Connecting to live chat...'); // Placeholder
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Newsletter form (placeholder)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thanks for subscribing! Welcome to the family.');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(240, 253, 244, 0.99)';
+            } else {
+                header.style.background = 'rgba(240, 253, 244, 0.98)';
+            }
+        });
+    </script>
+</body>
+</html>
