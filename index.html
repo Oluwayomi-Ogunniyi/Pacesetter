@@ -3,475 +3,878 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Pacesetter Mum - Empowering Every Step in Your Child's Unique Journey</title>
-    <meta name="description" content="A compassionate hub for parents and caregivers of children with special needs. Discover special education, therapy, and community support tailored for your family.">
-    <link rel="icon" href="https://via.placeholder.com/32?text=PM" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Thrivers Circle - Thrive Beyond CP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* Yellow-Green Theme: Optimistic Growth Palette for Empowerment */
-        /* Primary: Vibrant Green (#10b981) - Growth & Fresh Starts */
-        /* Secondary: Sunny Yellow (#f59e0b) - Warmth & Positivity */
-        /* Accent: Mustard Yellow (#d97706) - Subtle Energy & Highlights */
-        /* Neutrals: Light Mint (#f0fdf4) BG, Deep Forest (#065f46) Text for Readability */
         :root {
-            --primary-color: #10b981; /* Emerald Green: Calming growth vibe */
-            --secondary-color: #f59e0b; /* Amber Yellow: Joyful, welcoming energy */
-            --accent-color: #d97706; /* Mustard Yellow: Earthy accent for depth */
-            --bg-light: #f0fdf4; /* Light Mint Green: Soft, nature-inspired base */
-            --bg-card: #ffffff; /* Pure White for cards */
-            --text-primary: #065f46; /* Deep Forest Green: Strong contrast, grounded */
-            --text-secondary: #6b7280; /* Cool Gray: Balanced for secondary text */
-            --border-color: #d1fae5; /* Light Green: Soft, thematic dividers */
-            --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --sharp-green: #10B981;
+            --bright-yellow: #F59E0B;
+            --soft-green: #D1FAE5; /* Lighter green for backgrounds */
+            --warm-yellow: #FEF3C7; /* Softer yellow for highlights */
+            --bg-light: #FAFAFA; /* Neutral off-white */
+            --text-dark: #1F2937; /* Dark gray for readability */
+            --white: #FFFFFF;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-family: 'Lora', serif;
             line-height: 1.6;
-            color: var(--text-primary);
+            color: var(--text-dark);
             background-color: var(--bg-light);
             overflow-x: hidden;
         }
-
-        /* Header & Nav */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-dark);
+        }
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .container p {
+            font-size: larger;
+        }
+        /* Header */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(240, 253, 244, 0.98); /* Matches bg-light for seamless blend */
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            z-index: 100;
-            border-bottom: 1px solid var(--border-color);
-            transition: var(--transition);
+            z-index: 1000;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: background 0.3s ease;
         }
-
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
         }
-
         .logo {
+            display: flex;
+            align-items: center;
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--sharp-green);
             text-decoration: none;
         }
-
+        .logo img {
+            width: 60px;
+            height: 60px;
+            margin-right: 0.5rem;
+            border-radius: 50%;
+        }
         .nav-links {
             display: flex;
             list-style: none;
+            align-items: center;
             gap: 2rem;
         }
-
         .nav-links a {
             text-decoration: none;
-            color: var(--text-primary);
+            color: var(--text-dark);
             font-weight: 500;
-            transition: var(--transition);
+            transition: color 0.3s ease;
         }
-
         .nav-links a:hover {
-            color: var(--primary-color);
+            color: var(--sharp-green);
         }
-
-        .cta-button {
-            background: var(--primary-color);
-            color: white;
+        .nav-cta {
+            margin-left: 1rem;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            padding: 5px;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        .btn {
+            display: inline-block;
             padding: 0.75rem 1.5rem;
-            border-radius: 12px;
+            background: linear-gradient(135deg, var(--sharp-green), var(--bright-yellow));
+            color: var(--white);
             text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
+            border-radius: 50px;
+            font-family: 'Lora', serif;
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .cta-button:hover {
-            background: #059669; /* Darker green for depth */
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-md);
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.3);
         }
-
-        /* Hero Section */
-        .hero {
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
             height: 100vh;
+            background: var(--white);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 5rem 2rem 2rem;
+            box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+        }
+        .mobile-menu.active {
+            right: 0;
+        }
+        .mobile-menu ul {
+            list-style: none;
+        }
+        .mobile-menu li {
+            margin-bottom: 1.5rem;
+        }
+        .mobile-menu a {
+            display: block;
+            padding: 1rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            border-bottom: 1px solid var(--soft-green);
+            transition: background 0.3s ease;
+        }
+        .mobile-menu a:hover {
+            background: var(--soft-green);
+            color: var(--sharp-green);
+        }
+        .mobile-menu .btn {
+            width: 100%;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            position: relative;
+            color: var(--white);
+            background: linear-gradient(135deg, var(--sharp-green), var(--bright-yellow));
             overflow: hidden;
+            padding: 1rem;
         }
-
-        .hero::before {
+        #hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="500" cy="500" r="200" fill="rgba(255,255,255,0.1)"/></svg>') no-repeat center/cover;
-            animation: float 6s ease-in-out infinite;
+            background: url('https://via.placeholder.com/1920x1080/10B981/F59E0B?text=Empowering+Family+Moment') no-repeat center/cover;
+            opacity: 0.2;
+            z-index: -1;
         }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .hero-content {
+        #hero .hero-content {
+            background: rgba(255,255,255,0.1);
+            padding: 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
             max-width: 800px;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
-            animation: fadeInUp 1s ease-out;
+            width: 100%;
         }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+        #hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
             margin-bottom: 1rem;
-            font-weight: 800;
+            background: linear-gradient(135deg, var(--white), var(--warm-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-
-        .hero p {
-            font-size: 1.25rem;
+        #hero p {
+            font-size: clamp(1rem, 3vw, 1.25rem);
             margin-bottom: 2rem;
-            opacity: 0.95;
         }
-
-        .quick-help {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--secondary-color);
-            color: white;
-            padding: 1rem;
-            border-radius: 50%;
-            box-shadow: var(--shadow-md);
-            cursor: pointer;
-            transition: var(--transition);
-            z-index: 50;
-            animation: pulse 2s infinite;
+        .limited-note {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 1rem;
+            background: var(--warm-yellow);
+            color: var(--sharp-green);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
         }
-
-        .quick-help:hover {
-            transform: scale(1.05);
-            background: #d97706; /* Mustard accent for hover */
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: var(--shadow-md); }
-            50% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0.2); }
-        }
-
         /* Sections */
         section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: clamp(3rem, 5vw, 5rem) 0;
         }
-
-        .services {
-            background: var(--bg-light);
+        section:nth-child(even) {
+            background: var(--soft-green);
         }
-
-        .services h2 {
+        h2 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 2.5rem);
             margin-bottom: 3rem;
-            color: var(--text-primary);
+            background: linear-gradient(135deg, var(--sharp-green), var(--bright-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-
-        .services-grid {
+        /* Story Grid */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+            margin-top: 2rem;
+        }
+        .story-grid img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+        }
+        .pull-quote {
+            font-style: italic;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--bright-yellow);
+            margin: 2rem 0;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+        /* Cards */
+        .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 2rem;
         }
-
-        .service-card {
-            background: var(--bg-card);
+        .card {
+            background: var(--white);
             padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            transition: var(--transition);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid transparent;
+            background: linear-gradient(var(--white), var(--white)) padding-box,
+                        linear-gradient(135deg, var(--sharp-green), var(--bright-yellow)) border-box;
         }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--primary-color);
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.15);
         }
-
-        .service-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
+        .card h3 {
             font-size: 1.5rem;
-        }
-
-        .testimonials {
-            background: var(--bg-light);
-        }
-
-        .testimonials h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .testimonial-carousel {
-            display: flex;
-            overflow-x: auto;
-            gap: 1rem;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: none;
-        }
-
-        .testimonial-carousel::-webkit-scrollbar {
-            display: none;
-        }
-
-        .testimonial {
-            flex: 0 0 300px;
-            background: var(--bg-card);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-            scroll-snap-align: start;
-            border: 1px solid var(--border-color);
-        }
-
-        .testimonial p {
-            font-style: italic;
             margin-bottom: 1rem;
-            color: var(--text-secondary);
+            color: var(--sharp-green);
         }
-
-        .testimonial cite {
-            font-weight: 600;
-            color: var(--accent-color);
+        .card ul {
+            list-style: none;
+            text-align: left;
         }
-
+        .card li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .card li::before {
+            content: '✨';
+            color: var(--bright-yellow);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: scale(1.05);
+        }
+        .feature-card h3 {
+            color: var(--sharp-green);
+            margin-bottom: 1rem;
+        }
+        /* Testimonials Grid */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid var(--sharp-green);
+            position: relative;
+            overflow: hidden;
+        }
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, var(--sharp-green), var(--bright-yellow));
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.15);
+        }
+        .stars {
+            color: var(--bright-yellow);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .testimonial-text {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+        .testimonial-author {
+            font-weight: 500;
+            color: var(--sharp-green);
+            text-align: right;
+            font-size: 1rem;
+        }
+        /* Bonuses */
+        .bonuses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .bonus-item {
+            background: linear-gradient(135deg, var(--warm-yellow), var(--soft-green));
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        /* Investment */
+        .pricing-card {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 3rem;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
+            text-align: center;
+            border: 2px solid transparent;
+            background: linear-gradient(var(--white), var(--white)) padding-box,
+                        linear-gradient(135deg, var(--sharp-green), var(--bright-yellow)) border-box;
+        }
+        .price {
+            font-size: 3rem;
+            color: var(--bright-yellow);
+            margin: 1rem 0;
+            font-family: 'Playfair Display', serif;
+        }
+        form input {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--sharp-green);
+            border-radius: 10px;
+            font-family: 'Lora', serif;
+        }
+        /* FAQs */
+        .faq-item {
+            margin-bottom: 1rem;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .faq-question {
+            cursor: pointer;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            background: linear-gradient(135deg, var(--soft-green), var(--warm-yellow));
+            transition: background 0.3s ease;
+        }
+        .faq-question:hover {
+            background: linear-gradient(135deg, var(--sharp-green), var(--bright-yellow));
+            color: var(--white);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+        .faq-answer.active {
+            max-height: 300px;
+            padding: 1.5rem;
+        }
         /* Footer */
         footer {
-            background: var(--text-primary);
-            color: white;
+            padding: 3rem 0 1rem;
+            background: var(--text-dark);
+            color: var(--white);
             text-align: center;
-            padding: 2rem;
         }
-
         footer a {
-            color: var(--secondary-color);
-            text-decoration: none;
+            color: var(--bright-yellow);
         }
-
-        .newsletter {
-            background: var(--bg-card);
-            padding: 3rem;
-            text-align: center;
-            border-radius: 12px;
-            box-shadow: var(--shadow-sm);
-            margin: 2rem auto;
-            max-width: 600px;
-            border: 1px solid var(--border-color);
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        .newsletter input {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px 8px 0 0;
-            margin-bottom: 0;
-            background: var(--bg-light);
+        section {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
-
-        .newsletter button {
-            width: 100%;
-            background: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 1rem;
-            border-radius: 0 0 8px 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .newsletter button:hover {
-            background: #b45309; /* Darker mustard */
-        }
-
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .nav-links {
-                display: none; /* Mobile menu toggle can be added with JS */
+                gap: 1rem;
             }
-
+            .logo img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+        @media (max-width: 768px) {
+            .logo { 
+                font-size: 1.2rem; 
+            }
+            .logo img {
+                width: 45px;
+                height: 45px;
+            }
+            #hero h1 { 
+                font-size: 2.5rem; 
+            }
+            #hero .hero-content {
+                padding: 2rem 1.5rem;
+            }
+            .story-grid { 
+                grid-template-columns: 1fr; 
+                text-align: center; 
+                gap: 2rem;
+            }
+            .cards, .features-grid, .bonuses, .testimonials-grid { 
+                grid-template-columns: 1fr; 
+            }
+            .pricing-card {
+                padding: 2rem 1.5rem;
+            }
+            .price {
+                font-size: 2.5rem;
+            }
+            nav { 
+                position: relative;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .nav-cta {
+                display: none;
+            }
+            header { 
+                padding: 0.75rem 0; 
+            }
             section {
-                padding: 3rem 1rem;
+                padding: 3rem 0;
             }
-
-            .hero {
-                padding: 0 1rem;
-            }
-        }
-
-        /* Accessibility: Focus styles */
-        a:focus, button:focus {
-            outline: 2px solid var(--accent-color);
-            outline-offset: 2px;
-        }
-
-        /* Enhanced Dark Mode: Earthy Inversion for Evening Calm */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-light: #064e3b;
-                --bg-card: #065f46;
-                --text-primary: #f0fdf4;
-                --text-secondary: #d1fae5;
-                --border-color: #047857;
-            }
-
-            header {
-                background: rgba(6, 78, 59, 0.98);
-            }
-
-            .hero {
-                background: linear-gradient(135deg, #047857 0%, #b45309 100%); /* Darker green-yellow variants */
-            }
-
-            footer {
-                background: #064e3b;
-            }
-
-            footer a {
-                color: #f59e0b;
+            h2 {
+                margin-bottom: 2rem;
             }
         }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            #hero h1 { 
+                font-size: 2rem; 
+            }
+            #hero p {
+                font-size: 1rem;
+            }
+            .hero-content {
+                padding: 1.5rem 1rem;
+            }
+            .card, .feature-card, .bonus-item, .testimonial-card {
+                padding: 1.5rem;
+            }
+            .testimonial-text {
+                font-size: 1rem;
+            }
+            .faq-question {
+                padding: 1rem;
+                font-size: 0.95rem;
+            }
+            .faq-answer.active {
+                padding: 1rem;
+            }
+            .mobile-menu {
+                width: 100%;
+            }
+        }
+        /* Sticky CTA - Hidden for now, can activate */
+        .sticky-cta { display: none; }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <nav>
-            <a href="#" class="logo">The Pacesetter Mum</a>
+        <nav class="container">
+            <a href="#" class="logo">
+                <img src="image/Logo.jpg" alt="Thrive Beyond CP Logo"> <!-- Updated to point to image directory; adjust filename if needed (e.g., Founder.jpg if that's the intended logo) -->
+                The Pacesetter Mum
+            </a>
             <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#testimonials">Stories</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#founder">Founder's Story</a></li>
+                <li><a href="#overview">Program</a></li>
+                <li><a href="#inside">Inside</a></li>
+                <li><a href="#bonuses">Bonuses</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#faq">FAQs</a></li>
             </ul>
-            <a href="#booking" class="cta-button">Book a Call</a>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <a href="#investment" class="btn nav-cta">Join Now</a>
         </nav>
+        <div id="mobile-menu" class="mobile-menu">
+            <ul>
+                <li><a href="#founder">Founder's Story</a></li>
+                <li><a href="#overview">Program</a></li>
+                <li><a href="#inside">Inside</a></li>
+                <li><a href="#bonuses">Bonuses</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#faq">FAQs</a></li>
+                <li><a href="#investment" class="btn">Join Now</a></li>
+            </ul>
+        </div>
+        <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Empowering Every Step in Your Child's Unique Journey</h1>
-                <p>We're here with compassionate support for special education, therapy, and community, tailored for families like yours in Nigeria and beyond.</p>
-                <a href="#services" class="cta-button">Explore Resources</a>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>From Surviving to Thriving as Parents</h1>
+            <p><strong>You Don’t Have to Break to Raise a Child with Special Needs.</strong></p>
+            <p>Join the 90-day coaching program helping special-needs parents regain peace, rebuild strength, reduce burnout, achieve financial stability, and grow with faith and supportive community.</p>
+            <a href="#investment" class="btn">Join the Circle – Secure Your Spot</a>
+            <div class="limited-note">90-Day Journey | Limited Spots Available</div>
+        </div>
+    </section>
 
-        <div class="quick-help" onclick="openChat()" aria-label="Quick Help Chat">💬</div>
-
-        <section id="services" class="services">
-            <h2>Our Core Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Special Education</h3>
-                    <p>Personalized learning programs designed for children with diverse needs, fostering independence and joy in discovery.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Health & Therapy</h3>
-                    <p>Expert-led sessions in occupational, speech, and behavioral therapy to support holistic development.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Community Support</h3>
-                    <p>Connect with fellow parents through forums, events, and shared stories—because you're never alone.</p>
+    <!-- Founder's Story -->
+    <section id="founder">
+        <div class="container">
+            <h2>Catherine's Journey</h2>
+            <div class="story-grid">
+                <img src="image/Founder.jpg" alt="Portrait of Catherine Irene, founder of Thrive Beyond CP">
+                <div>
+                    <p>I’m Catherine Irene, Founder of Thrive Beyond Cerebral Palsy Academy—a biomedical scientist and mom to a daughter with cerebral palsy.<br><br>The day I heard those words, “cerebral palsy,” my world stopped.My plans, dreams, and confidence disappeared overnight.
+                         <br><br>Every therapy visit felt endless.<br>Every financial setback, a failure.<br>I told myself, “Just survive.”<br>But surviving isn’t living.<br><br>Years of pain, faith, and growth taught me this:My daughter doesn’t just need my care—She needs me to thrive. 
+                         The Thrivers circle mentorship programme starts january 2026  click to see what you stand to gain.</P>
+                    <div class="pull-quote">"My daughter doesn’t just need my care—She needs me to thrive."</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="testimonials" class="testimonials">
-            <h2>Real Families, Real Impact</h2>
-            <div class="testimonial-carousel">
-                <div class="testimonial">
-                    <p>"The Pacesetter Mum turned our isolation into a vibrant community. My son's progress in therapy has been life-changing."</p>
-                    <cite>— Aisha, Lagos</cite>
+    <!-- Program Overview -->
+    <section id="overview">
+        <div class="container">
+            <h2>The Thrivers Circle</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">A 90-day journey, one week at a time. Rebuild your peace, confidence, and purpose as a parent—because your child needs you thriving, not just surviving. Focus on you: guided video lessons, live Q&A calls, faith-based sessions, and a supportive community of parents like you.</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>Emotional Renewal</h3>
+                    <ul>
+                        <li>See your child through possibility, not fear</li>
+                        <li>Regain peace amid chaos with mindful tools</li>
+                        <li>Overcome guilt, burnout, and fear</li>
+                    </ul>
                 </div>
-                <div class="testimonial">
-                    <p>"From sensory play tips to expert advice, this hub feels like a warm embrace for overwhelmed mums."</p>
-                    <cite>— Fatima, Abuja</cite>
+                <div class="card">
+                    <h3>Practical Empowerment</h3>
+                    <ul>
+                        <li>Financial literacy and high-income skills</li>
+                        <li>Structure for your days, finances, and emotions</li>
+                        <li>Build lasting stability for your family</li>
+                    </ul>
                 </div>
-                <div class="testimonial">
-                    <p>"Booking sessions was seamless, and the empathy here is unmatched. Grateful every day."</p>
-                    <cite>— Ngozi, Port Harcourt</cite>
+                <div class="card">
+                    <h3>Spiritual Grounding</h3>
+                    <ul>
+                        <li>Faith-infused sessions for deeper purpose</li>
+                        <li>Live prayer and accountability calls</li>
+                        <li>Supportive community bonds</li>
+                    </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="newsletter" id="contact">
-            <h2>Get Weekly Wins in Your Inbox</h2>
-            <p>Sign up for tips, stories, and exclusive resources on special needs parenting.</p>
-            <form>
-                <input type="email" placeholder="Your email address" required aria-label="Email address">
-                <button type="submit">Subscribe</button>
-            </form>
-        </section>
-    </main>
+    <!-- Inside the Circle -->
+    <section id="inside">
+        <div class="container">
+            <h2>Inside the Circle: What You'll Experience</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Weekly Masterclasses</h3>
+                    <p>Expert-led videos to overcome guilt, burnout, and fear—leave lighter, clearer, stronger.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Faith + Focus Coaching Calls</h3>
+                    <p>Real-time support, prayer, and accountability from Catherine and the team.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Peace & Purpose Path Curriculum</h3>
+                    <p>Step-by-step roadmap for emotional regulation, spiritual grounding, and financial literacy.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Skill Vault Access</h3>
+                    <p>High-income skills like freelancing, video editing, and product sales to monetize immediately.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Community of Thrivers</h3>
+                    <p>Safe space for wins, struggles, prayers, and shared stories.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Guest Expert Sessions</h3>
+                    <p>Insights from therapists, financial coaches, and thriving parents on therapy, finance, and mindset.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Bonuses -->
+    <section id="bonuses">
+        <div class="container">
+            <h2>Gifts of Grace: Exclusive Bonuses</h2>
+            <div class="bonuses">
+                <div class="bonus-item">
+                    <h3>Daily Thrivebites</h3>
+                    <p>Short daily audios for calm, hope, and motivation in your parenting journey.</p>
+                </div>
+                <div class="bonus-item">
+                    <h3>90-Day Faith Journal</h3>
+                    <p>Printable guided journal for gratitude, reflections, and answered prayers.</p>
+                </div>
+                <div class="bonus-item">
+                    <h3>Therapy Integration Video Guide</h3>
+                    <p>Step-by-step videos to turn home routines into therapy and developmental activities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>What Parents Say About Us</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">"A powerful and uplifting session! Catherine's wisdom, sharing light from her own journey, has filled my heart with deep gratitude for you, the hope you bring to your family, and the beautiful blessings abundantly."</div>
+                    <div class="testimonial-author">- Ladi</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">"Catherine's passion for supporting special needs families through her personal journey is truly inspiring. She's given my child tools to grow. Her faith-driven parenting has strengthened not just my guidance but my entire family's peace."</div>
+                    <div class="testimonial-author">- Sakirat</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">"Meeting Mummy Irene's transformation mindset program gave me direction. Your webinars, confidence, and kindness have deeply impacted my journey. God bless you."</div>
+                    <div class="testimonial-author">- Bridget Oluana</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">"Losing my first was the most painful experience of my life. Mummy Catherine Irene's compassion and steady support gave me unimaginable hope. Her impact is beyond words—truly God's gift in our journey."</div>
+                    <div class="testimonial-author">- Chikodi</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">"Before Catherine's program, I'd lost hope for my child. But your teachings changed everything. He eats better now, you've restored my faith, and sleep has returned. Thank you, Catherine."</div>
+                    <div class="testimonial-author">- Christiana Ngzi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment -->
+    <section id="investment">
+        <div class="container">
+            <h2>Your Investment in Thriving</h2>
+            <div class="pricing-card">
+                <div class="price">₦40,000 (Early Access)</div>
+                <p>or ₦50,000 – Under ₦5,000 a month for coaching, mindset, accountability, and growth tools.</p>
+                <p>Includes full curriculum, live support, community access, bonuses, and more.</p>
+                <div style="margin: 2rem 0; font-size: 1.2rem; color: var(--sharp-green);">100% Satisfaction Guarantee – Full refund if no value, no questions asked.</div>
+                <form>
+                    <input type="text" placeholder="Your Full Name" required>
+                    <input type="email" placeholder="Your Email Address" required>
+                    <input type="tel" placeholder="Your Phone Number" required>
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Register Now & Secure Your Spot</button>
+                </form>
+                <details style="margin-top: 1rem;">
+                    <summary style="cursor: pointer; color: var(--bright-yellow); font-weight: 500;">Payment Details</summary>
+                    <p style="padding: 1rem; background: var(--soft-green); border-radius: 10px; margin-top: 0.5rem;">
+                        Bank: First Bank | Account Name: Catherine Irene | Account Number: 3045169679<br>
+                        Send proof of payment to +234 703 894 3857 to confirm your spot.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs -->
+    <section id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">What is The Thrivers Circle? <span>+</span></div>
+                <div class="faq-answer">The Thrivers Circle is a 90-day group coaching and support program for parents raising children with special needs. It helps you rebuild emotional strength, manage stress, grow financially, and parent with clarity, faith, and purpose.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Who is this program for? <span>+</span></div>
+                <div class="faq-answer">It’s for special-needs parents—especially those feeling overwhelmed, burnt out, or uncertain about their child’s future. Whether your child has cerebral palsy or another developmental challenge, this program will meet you where you are.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What will I gain from the program? <span>+</span></div>
+                <div class="faq-answer">You’ll gain peace of mind, emotional resilience, better financial management skills, and a supportive faith-based community that truly understands your journey.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What does the program include? <span>+</span></div>
+                <div class="faq-answer">The program includes recorded lessons, weekly group coaching calls, live Q&A sessions, accountability check-ins, and access to exclusive tools, planners, and resources. Everything is flexible and parent-friendly.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How much does it cost? <span>+</span></div>
+                <div class="faq-answer">The full price is ₦50,000, but you can join now for ₦40,000 (limited time). Payment Details: Bank: First Bank; Account Name: Catherine Irene; Account Number: 3045169679; Send proof of payment to +234 703 894 3857 to confirm your spot.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 The Pacesetter Mum. All rights reserved. 
+        <div class="container">
+            <p>&copy; 2025 The Pacesetter Mum. All rights reserved. | <a href="tel:+2347038943857">+234 703 894 3857</a> | <a href="https://thrivebeyondcp.com">thrivebeyondcp.com</a></p>
+            <p style="margin-top: 1rem; opacity: 0.8;">Empowering parents to thrive beyond cerebral palsy.</p>
+        </div>
     </footer>
 
     <script>
-        // Simple interactions for modern feel
-        function openChat() {
-            alert('Connecting to live chat...'); // Placeholder
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const overlay = document.getElementById('menu-overlay');
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
         }
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+        // Close menu on link click
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.remove('active');
+                document.getElementById('menu-overlay').classList.remove('active');
             });
         });
 
-        // Newsletter form (placeholder)
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thanks for subscribing! Welcome to the family.');
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
         });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const answer = q.nextElementSibling;
+                const icon = q.querySelector('span');
+                answer.classList.toggle('active');
+                icon.textContent = answer.classList.contains('active') ? '−' : '+';
+            });
+        });
+
+        // Form Submission
+        document.querySelector('form').addEventListener('submit', e => {
+            e.preventDefault();
+            alert('Thank you for registering! We\'ll contact you shortly to confirm.');
+        });
+
+        // Scroll Animations
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(sec => observer.observe(sec));
 
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.background = 'rgba(240, 253, 244, 0.99)';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
             } else {
-                header.style.background = 'rgba(240, 253, 244, 0.98)';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
             }
         });
     </script>
