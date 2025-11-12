@@ -98,13 +98,28 @@
             cursor: pointer;
             gap: 4px;
             padding: 5px;
+            transition: all 0.3s ease;
+        }
+        .hamburger.active {
+            padding: 3px;
         }
         .hamburger span {
             width: 25px;
             height: 3px;
             background: var(--text-dark);
-            transition: 0.3s;
+            transition: all 0.3s ease;
             border-radius: 2px;
+            position: relative;
+            transform-origin: 1px;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
         }
         .btn {
             display: inline-block;
@@ -848,8 +863,10 @@
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             const overlay = document.getElementById('menu-overlay');
+            const hamburger = document.querySelector('.hamburger');
             menu.classList.toggle('active');
             overlay.classList.toggle('active');
+            hamburger.classList.toggle('active');
         }
 
         // Close menu on link click
@@ -857,6 +874,7 @@
             link.addEventListener('click', () => {
                 document.getElementById('mobile-menu').classList.remove('active');
                 document.getElementById('menu-overlay').classList.remove('active');
+                document.querySelector('.hamburger').classList.remove('active');
             });
         });
 
