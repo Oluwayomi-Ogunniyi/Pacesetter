@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pacesetter Parents Tribe - The Pacesetter Mum</title>
+    <meta name="description" content="Join The Pacesetter Parents Tribe: Transform your parenting journey and help your special needs child thrive. Supportive community, proven strategies, and hope-filled guidance.">
+    <title>Pacesetter Parents Tribe</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,700;1,400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --sharp-green: #10B981;
-            --emerald-green: #059669;
-            --light-green: #34D399;
+            --primary-green: hsla(82, 97%, 23%, 0.85);
+            --accent-yellow: rgba(212, 156, 0, 1);
+            --light-green: hsla(82, 97%, 23%, 0.85);
+            --bg-white: #FFFFFF;
+            --text-black: #000000;
+            --text-dark: #1F2937;
+            --bg-offwhite: #FAFAFA;
+            --sharp-green: hsla(82, 97%, 23%, 0.85);
+            --emerald-green: hsla(82, 97%, 23%, 0.85);
+            --bright-green: hsla(83, 100%, 28%, 1.00);
             --sharp-yellow: #F59E0B;
-            --soft-green: #D1FAE5; /* Lighter green for backgrounds */
-            --mint-green: #A7F3D0; /* Softer green for highlights */
-            --bg-light: #FAFAFA; /* Neutral off-white */
-            --text-dark: #1F2937; /* Dark gray for readability */
+            --soft-green: #d5f799d9;
+            --mint-green: #bced68d9;
             --white: #FFFFFF;
+            --footer-green: hsla(82, 97%, 23%, 0.85);
         }
         * {
             margin: 0;
@@ -28,7 +36,7 @@
             font-family: 'Lora', serif;
             line-height: 1.6;
             color: var(--text-dark);
-            background-color: var(--bg-light);
+            background-color: var(--bg-offwhite);
             overflow-x: hidden;
         }
         h1, h2, h3 {
@@ -43,7 +51,7 @@
         .container p {
             font-size: larger;
         }
-        /* Header */
+        /* Header - Compact */
         header {
             position: fixed;
             top: 0;
@@ -51,7 +59,7 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 1rem 0;
+            padding: 0.5rem 0; /* Slimmed down */
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             transition: background 0.3s ease;
         }
@@ -63,14 +71,14 @@
         .logo {
             display: flex;
             align-items: center;
-            font-size: 1.5rem;
+            font-size: 1.2rem; /* Smaller */
             font-weight: 700;
             color: var(--sharp-green);
             text-decoration: none;
         }
         .logo img {
-            width: 60px;
-            height: 60px;
+            width: 50px; /* Smaller */
+            height: 50px;
             margin-right: 0.5rem;
             border-radius: 50%;
         }
@@ -78,19 +86,26 @@
             display: flex;
             list-style: none;
             align-items: center;
-            gap: 2rem;
+            gap: 2.5rem; /* Tighter gap */
+            margin: 0 auto;
         }
         .nav-links a {
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 500;
+            font-size: 0.95rem; /* Smaller font */
             transition: color 0.3s ease;
         }
         .nav-links a:hover {
-            color: var(--sharp-green);
+            color: var(--accent-yellow); /* Yellow hover from image */
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
         .nav-cta {
-            margin-left: 1rem;
+            margin-left: 0;
         }
         .hamburger {
             display: none;
@@ -124,7 +139,7 @@
         .btn {
             display: inline-block;
             padding: 0.75rem 1.5rem;
-            background: linear-gradient(135deg, var(--sharp-green), var(--light-green));
+            background: var(--primary-green);
             color: var(--white);
             text-decoration: none;
             border-radius: 50px;
@@ -134,7 +149,7 @@
         }
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.3);
+            box-shadow: 0 5px 20px rgba(5, 150, 105, 0.3);
         }
         /* Mobile Menu */
         .mobile-menu {
@@ -176,6 +191,7 @@
             width: 100%;
             margin-top: 1rem;
             text-align: center;
+            color: hsla(0, 0%, 100%, 1.00);
         }
         .menu-overlay {
             position: fixed;
@@ -202,24 +218,13 @@
             justify-content: center;
             text-align: center;
             color: var(--white);
-            background: linear-gradient(135deg, var(--sharp-green), var(--emerald-green));
+            background: url('image/hero.png') no-repeat center/cover;
             overflow: hidden;
             padding: 1rem;
-            padding-top: 100px;
-        }
-        #hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://via.placeholder.com/1920x1080/10B981/059669?text=Empowering+Family+Moment') no-repeat center/cover;
-            opacity: 0.2;
-            z-index: -1;
+            padding-top: 70px; /* Adjusted for slimmer header */
         }
         #hero .hero-content {
-            background: rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.3);
             padding: 3rem;
             border-radius: 20px;
             backdrop-filter: blur(10px);
@@ -229,7 +234,7 @@
         #hero h1 {
             font-size: clamp(2rem, 5vw, 3.5rem);
             margin-bottom: 1rem;
-            background: #ffffff;
+            background: var(--white);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -237,16 +242,6 @@
         #hero p {
             font-size: clamp(1rem, 3vw, 1.25rem);
             margin-bottom: 2rem;
-        }
-        .limited-note {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            margin-top: 1rem;
-            background: #ffffff;
-            color: var(--sharp-green);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            display: inline-block;
         }
         /* Sections */
         section {
@@ -259,97 +254,96 @@
             text-align: center;
             font-size: clamp(2rem, 4vw, 2.5rem);
             margin-bottom: 3rem;
-            background: linear-gradient(135deg, var(--sharp-green), var(--light-green));
+            background: var(--primary-green);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        /* Story Grid */
-        .story-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: start;
-            margin-top: 2rem;
-        }
-        .story-grid img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
-        }
-        .pull-quote {
-            font-style: italic;
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            color: var(--sharp-yellow);
-            margin: 2rem 0;
+        /* Problem Section */
+        .problem-bullets {
+            max-width: 800px;
+            margin: 0 auto 2rem;
             text-align: center;
-            font-family: 'Roboto', sans-serif;
         }
-        /* Cards */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid transparent;
-            background: linear-gradient(var(--white), var(--white)) padding-box,
-                        linear-gradient(135deg, var(--sharp-green), var(--light-green)) border-box;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.15);
-        }
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--sharp-green);
-        }
-        .card ul {
+        .problem-bullets ul {
             list-style: none;
             text-align: left;
         }
-        .card li {
-            margin: 0.5rem 0;
+        .problem-bullets li {
+            margin: 1rem 0;
             padding-left: 1.5rem;
             position: relative;
         }
-        .card li::before {
-            content: '✨';
-            color: var(--sharp-yellow);
+        .problem-bullets li::before {
+            content: '💔';
             position: absolute;
             left: 0;
             font-size: 1.2rem;
         }
-        /* Features Grid */
-        .features-grid {
+        .transition-text {
+            text-align: center;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--accent-yellow); /* Yellow from image */
+            margin: 2rem 0;
+        }
+        /* About Section */
+        .about-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
-        .feature-card {
+        .about-card {
             background: var(--white);
             padding: 2rem;
             border-radius: 20px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
+            border-left: 4px solid var(--sharp-yellow); /* Yellow accent */
         }
-        .feature-card:hover {
+        .about-card:hover {
             transform: scale(1.05);
         }
-        .feature-card h3 {
+        .about-card h3 {
             color: var(--sharp-green);
             margin-bottom: 1rem;
         }
-        /* Testimonials Grid */
+        /* Gain Section */
+        .gain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .gain-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border: 1px solid transparent;
+            background: linear-gradient(var(--white), var(--white)) padding-box,
+                        linear-gradient(135deg, var(--sharp-green), var(--sharp-yellow)) border-box; /* Yellow in gradient */
+        }
+        .gain-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.15);
+        }
+        .gain-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--sharp-green);
+        }
+        .bonus-note {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: var(--mint-green);
+            border-radius: 10px;
+        }
+        /* Testimonials */
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -373,14 +367,14 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(135deg, var(--sharp-green), var(--light-green));
+            background: linear-gradient(135deg, var(--sharp-green), var(--sharp-yellow));
         }
         .testimonial-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 40px rgba(16, 185, 129, 0.15);
         }
         .stars {
-            color: var(--sharp-yellow);
+            color: var(--accent-yellow);
             font-size: 1.2rem;
             margin-bottom: 1rem;
             text-align: center;
@@ -400,63 +394,32 @@
             text-align: right;
             font-size: 1rem;
         }
-        /* Bonuses */
-        .bonuses {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .bonus-item {
-            background: linear-gradient(135deg, var(--mint-green), var(--soft-green));
-            padding: 1.5rem;
-            border-radius: 15px;
-            text-align: center;
-        }
-        /* Investment */
-        .pricing-card {
-            max-width: 600px;
+        /* How It Works */
+        .steps {
+            max-width: 800px;
             margin: 0 auto;
-            padding: 3rem;
+        }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
             background: var(--white);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
-            text-align: center;
-            border: 2px solid transparent;
-            background: linear-gradient(var(--white), var(--white)) padding-box,
-                        linear-gradient(135deg, var(--sharp-green), var(--light-green)) border-box;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-        .price {
-            font-size: 3rem;
-            color: var(--sharp-yellow);
-            margin: 1rem 0;
-            font-family: 'Roboto', sans-serif;
-        }
-        .pricing-options {
-            display: grid;
-            gap: 1rem;
-            margin: 2rem 0;
-            text-align: left;
-        }
-        .pricing-option {
-            padding: 1rem;
-            background: var(--soft-green);
-            border-radius: 10px;
-            border-left: 4px solid var(--sharp-green);
-        }
-        .pricing-option.flash {
-            background: linear-gradient(135deg, var(--mint-green), var(--light-green));
-            border-left-color: var(--sharp-yellow);
-            color: var(--text-dark);
-        }
-        form input {
-            display: block;
-            width: 100%;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border: 1px solid var(--sharp-green);
-            border-radius: 10px;
-            font-family: 'Lora', serif;
+        .step-number {
+            background: linear-gradient(135deg, var(--sharp-green), var(--sharp-yellow));
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 1rem;
+            flex-shrink: 0;
         }
         /* FAQs */
         .faq-item {
@@ -490,15 +453,107 @@
             max-height: 300px;
             padding: 1.5rem;
         }
-        /* Footer */
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 4rem 2rem;
+        }
+        .final-cta h2 {
+            background: var(--white);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Investment - Back to original style */
+        .pricing-card {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 3rem;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.1);
+            text-align: center;
+            border: 2px solid transparent;
+            background: linear-gradient(var(--white), var(--white)) padding-box,
+                        linear-gradient(135deg, var(--sharp-green), var(--sharp-yellow)) border-box;
+        }
+        .price {
+            font-size: 3rem;
+            color: var(--sharp-yellow);
+            margin: 1rem 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .pricing-options {
+            display: grid;
+            gap: 1rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        .pricing-option {
+            padding: 1rem;
+            background: var(--soft-green);
+            border-radius: 10px;
+            border-left: 4px solid var(--sharp-green);
+        }
+        .pricing-option.flash {
+            background: linear-gradient(135deg, var(--mint-green), var(--bright-green));
+            border-left-color: var(--sharp-yellow);
+            color: var(--text-dark);
+        }
+        form input {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--sharp-green);
+            border-radius: 10px;
+            font-family: 'Lora', serif;
+        }
+        /* Footer - Mature, green bg, links with | */
         footer {
-            padding: 3rem 0 1rem;
-            background: var(--text-dark);
+            padding: 2rem 0;
+            background: var(--footer-green);
             color: var(--white);
             text-align: center;
+            border-top: 4px solid var(--sharp-yellow); /* Thin yellow bar from image */
         }
-        footer a {
-            color: var(--sharp-yellow);
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+        .footer-links a {
+            color: var(--white);
+            margin: 0 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .footer-links a:not(:last-child):after {
+            content: " | ";
+            color: var(--white);
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+            display: inline-block;
+        }
+        .social-links a:hover {
+            color: var(--accent-yellow);
         }
         /* Animations */
         @keyframes fadeInUp {
@@ -512,58 +567,55 @@
         /* Responsive */
         @media (max-width: 1024px) {
             .nav-links {
-                gap: 1rem;
+                gap: 0.5rem;
             }
             .logo img {
-                width: 50px;
-                height: 50px;
+                width: 40px;
+                height: 40px;
             }
         }
         @media (max-width: 768px) {
-            .logo { 
-                font-size: 1.2rem; 
+            .logo {
+                font-size: 1rem;
             }
             .logo img {
-                width: 45px;
-                height: 45px;
+                width: 40px;
+                height: 40px;
             }
-            #hero h1 { 
-                font-size: 2.5rem; 
+            #hero h1 {
+                font-size: 2.5rem;
             }
             #hero .hero-content {
                 padding: 2rem 1.5rem;
             }
             #hero {
-                padding-top: 70px;
+                padding-top: 60px;
             }
-            .story-grid { 
-                grid-template-columns: 1fr; 
-                text-align: center; 
-                gap: 2rem;
+            .about-grid, .gain-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
             }
-            .cards, .features-grid, .bonuses, .testimonials-grid { 
-                grid-template-columns: 1fr; 
+            .step {
+                flex-direction: column;
+                text-align: center;
             }
-            .pricing-card {
-                padding: 2rem 1.5rem;
+            .step-number {
+                margin-bottom: 1rem;
+                margin-right: 0;
             }
-            .price {
-                font-size: 2.5rem;
-            }
-            nav { 
+            nav {
                 position: relative;
             }
             .nav-links {
                 display: none;
             }
+            .nav-right .nav-cta {
+                display: none;
+            }
             .hamburger {
                 display: flex;
             }
-            .nav-cta {
-                display: none;
-            }
-            header { 
-                padding: 0.75rem 0; 
+            header {
+                padding: 0.4rem 0;
             }
             section {
                 padding: 3rem 0;
@@ -571,13 +623,22 @@
             h2 {
                 margin-bottom: 2rem;
             }
+            .footer-links a:not(:last-child):after {
+                content: " | ";
+            }
+            .social-links {
+                gap: 0.5rem;
+            }
+            .social-links a {
+                font-size: 1.2rem;
+            }
         }
         @media (max-width: 480px) {
             .container {
                 padding: 0 15px;
             }
-            #hero h1 { 
-                font-size: 2rem; 
+            #hero h1 {
+                font-size: 2rem;
             }
             #hero p {
                 font-size: 1rem;
@@ -585,7 +646,7 @@
             .hero-content {
                 padding: 1.5rem 1rem;
             }
-            .card, .feature-card, .bonus-item, .testimonial-card {
+            .about-card, .gain-card, .testimonial-card {
                 padding: 1.5rem;
             }
             .testimonial-text {
@@ -602,8 +663,6 @@
                 width: 100%;
             }
         }
-        /* Sticky CTA - Hidden for now, can activate */
-        .sticky-cta { display: none; }
     </style>
 </head>
 <body>
@@ -612,179 +671,201 @@
         <nav class="container">
             <a href="#" class="logo">
                 <img src="image/Logo.jpg" alt="Pacesetter Parents Tribe Logo">
-                The Pacesetter Mum
+                The Pacesetter Parents Tribe
             </a>
             <ul class="nav-links">
-                <li><a href="#founder">Founder's Story</a></li>
-                <li><a href="#overview">Program</a></li>
-                <li><a href="#inside">Inside</a></li>
-                <li><a href="#bonuses">Bonuses</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gain">What You'll Gain</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#faq">FAQs</a></li>
+                <li><a href="#how">How It Works</a></li>
+                <li><a href="#faq">FAQ</a></li>
             </ul>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-right">
+                <div class="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="#investment" class="btn nav-cta">Join the Tribe</a>
             </div>
-            <a href="#investment" class="btn nav-cta">Join Now</a>
         </nav>
         <div id="mobile-menu" class="mobile-menu">
             <ul>
-                <li><a href="#founder">Founder's Story</a></li>
-                <li><a href="#overview">Program</a></li>
-                <li><a href="#inside">Inside</a></li>
-                <li><a href="#bonuses">Bonuses</a></li>
+                <li><a href="#problem">About</a></li>
+                <li><a href="#gain">What You'll Gain</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#faq">FAQs</a></li>
-                <li><a href="#investment" class="btn">Join Now</a></li>
+                <li><a href="#how">How It Works</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#investment" class="btn">Join the Tribe</a></li>
             </ul>
         </div>
         <div id="menu-overlay" class="menu-overlay" onclick="toggleMenu()"></div>
     </header>
-
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-content">
-            <h1>THE PACESETTER PARENTS TRIBE</h1>
-            <p><strong>Transform Your Parenting Journey: Help Your Special Needs Child Thrive and Fulfill Their Destiny.</strong></p>
+            <h1>Transform Your Parenting Journey: Help Your Special Needs Child Thrive and Fulfill Their Destiny</h1>
             <p>Join The Pacesetter Parents Tribe, a supportive community of parents changing the narrative around special needs—because every child has the potential to shine.</p>
             <a href="#investment" class="btn">Join the Tribe Today</a>
-           
         </div>
     </section>
-
-    <!-- Founder's Story -->
-    <section id="founder">
+    <!-- Problem Section -->
+    <section id="problem">
         <div class="container">
-            <h2>From Overwhelm to Oasis: Jennifer's Calling</h2>
-            <div class="story-grid">
-                <img src="image/Founder.jpg" alt="Portrait of Jennifer, founder of The Pacesetter Mum Learning Hub">
-                <div>
-                    <p>I’m Jennifer, the founder of The Pacesetter Mum Learning Hub—a dedicated mum, educator, and advocate for families navigating special needs. Registered in Nigeria (CAC No. 7297445), our hub was born from my own raw journey of raising a child with unique challenges.<br><br>The diagnosis hit like a storm: confusion swirled, therapies loomed endlessly, and the emotional toll left me questioning everything. I felt isolated, drained, and far from the confident parent I longed to be.<br><br>Yet, in moments of quiet faith and connection with nature's gentle rhythms, light broke through. Embracing holistic nourishment, compassionate community, and spiritual grounding, I transformed survival into thriving. No longer just enduring, I began empowering—realizing every parent deserves tools to cultivate physical, emotional, and soul-deep growth for their family.<br><br>That's the heartbeat of the Pacesetter Parents Tribe: guiding you from uncertainty to unshakeable confidence, one faith-fueled step at a time.</p>
-                    <div class="pull-quote">"In nurturing ourselves with faith and compassion, we create oases where our children—and we—truly bloom."</div>
+            <h2>You’re Doing Your Best, But Parenting a Special Needs Child Feels Overwhelming</h2>
+            <div class="problem-bullets">
+                <ul>
+                    <li>Endless therapies, advice, and “quick fixes” that rarely work.</li>
+                    <li>Feeling isolated, exhausted, and unsure if your child will reach their full potential.</li>
+                    <li>Conflicting information leaves you confused about what truly helps.</li>
+                </ul>
+            </div>
+            <p class="transition-text">You’re not alone—and there is a better way.</p>
+        </div>
+    </section>
+    <!-- About the Tribe -->
+    <section id="about">
+        <div class="container">
+            <h2>The Pacesetter Parents Tribe: Where Hope Meets Strategy</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">We are a community of intentional parents dedicated to raising thriving special needs children. Here, you’ll find:</p>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Expert Guidance</h3>
+                    <p>Proven strategies for speech, behavioral, and cognitive development.</p>
                 </div>
+                <div class="about-card">
+                    <h3>Emotional Support</h3>
+                    <p>Connect with parents who truly understand your journey.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Accountability</h3>
+                    <p>We’ll hold your hand step by step—you'll never feel alone on this journey.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Practical Tools</h3>
+                    <p>Daily routines, resources, and exercises that actually work.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Empowerment</h3>
+                    <p>Learn to advocate for your child confidently.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#investment" class="btn">I Want to Join the Tribe</a>
             </div>
         </div>
     </section>
-
-    <!-- Program Overview -->
-    <section id="overview">
+    <!-- What You'll Gain -->
+    <section id="gain">
         <div class="container">
-            <h2>The Pacesetter Parents Tribe</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">A 1-year journey, one week at a time. Rebuild your peace, confidence, and purpose as a parent—because your child needs you thriving, not just surviving. Focus on you: guided video lessons, live Q&A calls, faith-based sessions, and a supportive community of parents like you.</p>
-            <div class="cards">
-                <div class="card">
-                    <h3>Emotional Renewal</h3>
-                    <ul>
-                        <li>See your child through possibility, not fear</li>
-                        <li>Regain peace amid chaos with mindful tools</li>
-                        <li>Overcome guilt, burnout, and fear</li>
-                    </ul>
+            <h2>Everything You Need to Transform Your Parenting Journey</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">When you join, you will get:</p>
+            <div class="gain-grid">
+                <div class="gain-card">
+                    <h3>Clarity & Confidence</h3>
+                    <p>Understand your child’s unique needs and know exactly what works.</p>
                 </div>
-                <div class="card">
-                    <h3>Practical Empowerment</h3>
-                    <ul>
-                        <li>Financial literacy and high-income skills</li>
-                        <li>Structure for your days, finances, and emotions</li>
-                        <li>Build lasting stability for your family</li>
-                    </ul>
+                <div class="gain-card">
+                    <h3>Behavioral Breakthroughs</h3>
+                    <p>Reduce meltdowns, improve communication, and foster cooperation.</p>
                 </div>
-                <div class="card">
-                    <h3>Spiritual Grounding</h3>
-                    <ul>
-                        <li>Faith-infused sessions for deeper purpose</li>
-                        <li>Live prayer and accountability calls</li>
-                        <li>Supportive community bonds</li>
-                    </ul>
+                <div class="gain-card">
+                    <h3>Community & Connection</h3>
+                    <p>Never feel alone again—share wins, ask questions, and celebrate progress.</p>
                 </div>
+            </div>
+            <div class="bonus-note">
+                <strong>Bonus:</strong> Access webinars, printable guides, worksheets, and exclusive resources for holistic child development.
             </div>
         </div>
     </section>
-
-    <!-- Inside the Circle -->
-    <section id="inside">
-        <div class="container">
-            <h2>Inside the Tribe: What You'll Experience</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Get Clarity</h3>
-                    <p>Gain deep insights into your child's needs and your own parenting journey for true understanding and direction.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Learn Holistic Healing Tools</h3>
-                    <p>Discover natural, faith-integrated methods to heal emotional wounds, reduce stress, and foster family well-being.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Access Weekly Coaching & Guidance</h3>
-                    <p>Personalized support through live sessions with Coach Jennifer to navigate challenges with expert advice.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Connect with Like-minded Parents</h3>
-                    <p>Build meaningful relationships in a safe, supportive community of parents sharing similar experiences.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Experience Real Transformation</h3>
-                    <p>Achieve sustainable changes in mindset, habits, and family dynamics that last beyond the program.</p>
-                </div>
-                <div class="feature-card">
-                    <h3>Exclusive Resources</h3>
-                    <p>Unlock premium tools, guides, and materials designed to empower your growth every step of the way.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Bonuses -->
-    <section id="bonuses">
-        <div class="container">
-            <h2>Gifts of Grace: Exclusive Bonuses</h2>
-            <div class="bonuses">
-                <div class="bonus-item">
-                    <h3>Daily Thrivebites</h3>
-                    <p>Short daily audios for calm, hope, and motivation in your parenting journey.</p>
-                </div>
-                <div class="bonus-item">
-                    <h3>Faith Journal</h3>
-                    <p>Printable guided journal for gratitude, reflections, and answered prayers.</p>
-                </div>
-                <div class="bonus-item">
-                    <h3>Therapy Integration Video Guide</h3>
-                    <p>Step-by-step videos to turn home routines into therapy and developmental activities.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Testimonials -->
     <section id="testimonials">
         <div class="container">
-            <h2>What Parents Say About Us</h2>
+            <h2>Parents Who’ve Found Hope, Support, and Results</h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <div class="testimonial-text">"Thank you very much madam Jennifer, God will continue to bless you richly as you are encouraging us. I'm a testimony."</div>
-                    <div class="testimonial-author">- Victoria Daniel's Mum. Widow</div>
+                    <div class="testimonial-text">"I used to feel so isolated. Now I have a community that truly understands and supports me every step of the way."</div>
+                    <div class="testimonial-author">– Chinedu O.</div>
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <div class="testimonial-text">"Thank you very much we really appreciate, your God will continue to strengthen you for us. IJN (Amen)."</div>
-                    <div class="testimonial-author">- Felix Susan, Warri</div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <div class="testimonial-text">"They said knowledge is power, with some of the teachings I have taught child mode things."</div>
-                    <div class="testimonial-author">- Janet Olusegun</div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <div class="testimonial-text">"Before Jennifer's program, I'd lost hope for my child. But your teachings changed everything. He eats better now, you've restored my faith, and sleep has returned. Thank you, Jennifer."</div>
-                    <div class="testimonial-author">- Mrs Chisom Nwachukwu</div>
+                    <div class="testimonial-text">"The strategies I learned here actually work. My child is more independent, happy, and thriving!"</div>
+                    <div class="testimonial-author">– Tolu A.</div>
                 </div>
             </div>
         </div>
     </section>
-
+    <!-- How It Works -->
+    <section id="how">
+        <div class="container">
+            <h2>Simple Steps to Join and Thrive</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div>
+                        <h3>Sign Up</h3>
+                        <p>Fill out the quick form to join the Tribe.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div>
+                        <h3>Access Resources</h3>
+                        <p>Get instant access to guides, worksheets, and expert videos.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div>
+                        <h3>Engage in the Community</h3>
+                        <p>Ask questions, share progress, and celebrate wins.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div>
+                        <h3>Transform Your Parenting</h3>
+                        <p>Apply strategies daily and watch your child thrive.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#investment" class="btn">Join the Tribe Now</a>
+            </div>
+        </div>
+    </section>
+    <!-- FAQs -->
+    <section id="faq">
+        <div class="container">
+            <h2>Got Questions? We’ve Got Answers</h2>
+            <div class="faq-item">
+                <div class="faq-question">Who is this for? <span>+</span></div>
+                <div class="faq-answer">Parents of special needs children, caregivers, and anyone seeking proven strategies and community support.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do I need experience or training? <span>+</span></div>
+                <div class="faq-answer">No! We provide step-by-step guidance for parents at any stage.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is this only online? <span>+</span></div>
+                <div class="faq-answer">Yes, you can access everything from your phone, tablet, or computer—anywhere, anytime.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What makes this different from other parent groups? <span>+</span></div>
+                <div class="faq-answer">We focus on results, hope, and empowerment, not empty advice or “quick fixes.”</div>
+            </div>
+        </div>
+    </section>
+    <!-- Final CTA -->
+    <section id="final-cta" class="final-cta">
+        <div class="container">
+            <h2>Take the First Step Towards Transforming Your Parenting Journey</h2>
+            <p>Your child deserves to thrive. You deserve support, clarity, and hope. Join The Pacesetter Parents Tribe today and start seeing real change in your child and your parenting.</p>
+            <a href="#investment" class="btn" style="font-size: 1.2rem; padding: 1rem 2rem;">Yes! I’m Joining the Tribe</a>
+        </div>
+    </section>
     <!-- Investment -->
     <section id="investment">
         <div class="container">
@@ -813,7 +894,7 @@
                     <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Register Now & Secure Your Spot</button>
                 </form>
                 <details style="margin-top: 1rem;">
-                    <summary style="cursor: pointer; color: var(--light-green); font-weight: 500;">Payment Details</summary>
+                    <summary style="cursor: pointer; color: var(--bright-green); font-weight: 500;">Payment Details</summary>
                     <p style="padding: 1rem; background: var(--soft-green); border-radius: 10px; margin-top: 0.5rem;">
                         Bank: FIDELITY BANK | Account Name: THE PACESETTER MUM LEARNING HUB LTD | Account Number: 5601393444<br>
                         Send proof of payment to +234 803 051 8783 to confirm your spot.
@@ -822,42 +903,24 @@
             </div>
         </div>
     </section>
-
-    <!-- FAQs -->
-    <section id="faq">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <div class="faq-question">What is The Pacesetter Parents Tribe? <span>+</span></div>
-                <div class="faq-answer">The Pacesetter Parents Tribe is a 1-year group coaching and support program for parents raising children with special needs. It helps you rebuild emotional strength, manage stress, grow financially, and parent with clarity, faith, and purpose.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">Who is this program for? <span>+</span></div>
-                <div class="faq-answer">It’s for special-needs parents—especially those feeling overwhelmed, burnt out, or uncertain about their child’s future. Whether your child has cerebral palsy or another developmental challenge, this program will meet you where you are.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">What will I gain from the program? <span>+</span></div>
-                <div class="faq-answer">You’ll gain peace of mind, emotional resilience, better financial management skills, and a supportive faith-based community that truly understands your journey.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">What does the program include? <span>+</span></div>
-                <div class="faq-answer">The program includes recorded lessons, weekly group coaching calls, live Q&A sessions, accountability check-ins, and access to exclusive tools, planners, and resources. Everything is flexible and parent-friendly.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">How much does it cost? <span>+</span></div>
-                <div class="faq-answer">Flash Sale: ₦90,000 (ends Nov 15, 2025); Early Birds: ₦100,000 (till Dec 15, 2025); Regular: ₦150,000. Payment Details: Bank: FIDELITY BANK; Account Name: THE PACESETTER MUM LEARNING HUB LTD; Account Number: 5601393444; Send proof of payment to +234 803 051 8783 to confirm your spot.</div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 The Pacesetter Mum. All rights reserved. | <a href="tel:+2348030518783">+234 803 051 8783</a> | <a href="https://thepacesettermum.com">thepacesettermum.com</a></p>
-            <p style="margin-top: 1rem; opacity: 0.8;">Empowering parents of children with special needs to thrive.</p>
+            <div class="footer-links">
+                <a href="#problem">About</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#faq">FAQ</a>
+                <a href="tel:+2348030518783">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/pacesetterparentstribe" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/pacesetterparentstribe" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/pacesetterparentstribe" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.pinterest.com/pacesetterparentstribe" target="_blank" rel="noopener noreferrer"><i class="fab fa-pinterest"></i></a>
+            </div>
+            <p>&copy; 2025 The Pacesetter Parents Tribe. All rights reserved.</p>
         </div>
     </footer>
-
     <script>
         // Mobile Menu Toggle
         function toggleMenu() {
@@ -868,7 +931,6 @@
             overlay.classList.toggle('active');
             hamburger.classList.toggle('active');
         }
-
         // Close menu on link click
         document.querySelectorAll('.mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
@@ -877,7 +939,6 @@
                 document.querySelector('.hamburger').classList.remove('active');
             });
         });
-
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', e => {
@@ -885,7 +946,6 @@
                 document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
-
         // FAQ Toggle
         document.querySelectorAll('.faq-question').forEach(q => {
             q.addEventListener('click', () => {
@@ -895,13 +955,11 @@
                 icon.textContent = answer.classList.contains('active') ? '−' : '+';
             });
         });
-
         // Form Submission
         document.querySelector('form').addEventListener('submit', e => {
             e.preventDefault();
             alert('Thank you for registering! We\'ll contact you shortly to confirm.');
         });
-
         // Scroll Animations
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -911,9 +969,7 @@
                 }
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('section').forEach(sec => observer.observe(sec));
-
         // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
