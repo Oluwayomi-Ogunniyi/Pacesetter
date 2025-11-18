@@ -981,10 +981,10 @@
                     </div>
                 </div>
                 <br><br>
-                <form>
-                    <input type="text" placeholder="Your Full Name" required>
-                    <input type="email" placeholder="Your Email Address" required>
-                    <input type="tel" placeholder="Your Phone Number" required>
+                <form id="registration-form">
+                    <input type="text" id="user_name" placeholder="Your Full Name" required>
+                    <input type="email" id="user_email" placeholder="Your Email Address" required>
+                    <input type="tel" id="user_phone" placeholder="Your Phone Number" required>
                     <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Register Now & Secure Your Spot</button>
                 </form>
                 <details style="margin-top: 1rem;">
@@ -1015,7 +1015,11 @@
             <p>&copy; 2025 The Pacesetter Parents Tribe. All rights reserved.</p>
         </div>
     </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
+        // Initialize EmailJS - Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+        emailjs.init("ltXJ8z3vq_aqlBxu-");
+
         // Mobile Menu Toggle
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
@@ -1049,10 +1053,23 @@
                 icon.textContent = answer.classList.contains('active') ? '−' : '+';
             });
         });
-        // Form Submission
-        document.querySelector('form').addEventListener('submit', e => {
+        // Form Submission with EmailJS - Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual values
+        document.getElementById('registration-form').addEventListener('submit', e => {
             e.preventDefault();
-            alert('Thank you for registering! We\'ll contact you shortly to confirm.');
+            const templateParams = {
+                from_name: document.getElementById('user_name').value,
+                from_email: document.getElementById('user_email').value,
+                phone: document.getElementById('user_phone').value,
+            };
+            emailjs.send('service_iy038mc', 'template_yhu12qn', templateParams)
+                .then((response) => {
+                    console.log('SUCCESS!', response.status, response.text);
+                    alert('YOU HAVE SUCCESSFULLY PRE-REGISTERED FOR THIS COURSE. To secure your seat make payment to this account and send proof of payment to the WhatsApp number.');
+                    document.getElementById('registration-form').reset();
+                }, (err) => {
+                    console.log('FAILED...', err);
+                    alert('Failed to send email. Please try again.');
+                });
         });
         // Scroll Animations
         const observer = new IntersectionObserver(entries => {
